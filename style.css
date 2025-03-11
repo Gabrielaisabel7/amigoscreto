@@ -3,7 +3,7 @@
     --color-secondary: #FFF9EB;
     --color-tertiary: #690B22;
     --color-button: #690B22;
-    --color-button-hover: #690B22;
+    --color-button-hover: #b16a6a;
     --color-text: #000000;
     --color-white: #FFFFFF;
 }
@@ -43,7 +43,7 @@ body {
 .input-section {
     flex: 60%;
     background-color: var(--color-secondary);
-    border: 1px solid #000;
+    border: 1px solid var(--color-text);
     border-radius: 64px 64px 0 0;
     display: flex;
     flex-direction: column;
@@ -62,7 +62,7 @@ body {
 }
 
 .section-title {
-    font-family: "Inter", serif;
+    font-family: "Inter", sans-serif;
     font-size: 36px;
     font-weight: 700;
     color: var(--color-primary);
@@ -79,29 +79,20 @@ body {
     margin-top: 20px;
 }
 
-.input-name {
+.input-name, .input-title {
     width: 100%;
     padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
     font-size: 16px;
+    border: 2px solid var(--color-text);
+    border-radius: 25px 0 0 25px;
+    font-family: "Merriweather", serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .button-container {
     width: 300px;
+    display: flex;
     justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos de botão */
@@ -109,7 +100,7 @@ button {
     padding: 15px 30px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
-    border: 2px solid #000;
+    border: 2px solid var(--color-text);
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
@@ -117,12 +108,12 @@ button {
 
 .button-add {
     background-color: var(--color-tertiary);
-    color: white;
+    color: var(--color-white);
     border-radius: 0 25px 25px 0;
 }
 
-.button-add:hover {
-    background-color: #b16a6a;
+.button-add:hover, .button-draw:hover {
+    background-color: var(--color-button-hover);
 }
 
 /* Listas */
@@ -157,6 +148,74 @@ ul {
     margin-right: 40px;
 }
 
-.button-draw:hover {
-    background-color: #b16a6a;
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .main-content {
+        height: auto;
+        padding: 20px;
+    }
+
+    .header-banner {
+        flex: none;
+        padding: 20px 0;
+    }
+
+    .main-title {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .input-section {
+        flex: none;
+        border-radius: 32px 32px 0 0;
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .input-title, .button-add {
+        border-radius: 25px;
+        width: 100%;
+    }
+
+    .button-container, button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    ul {
+        font-size: 16px;
+    }
+}
+ize: 16px;
+    }
+
+    .result-list {
+        font-size: 20px;
+    }
+
+    .button-draw {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .button-draw img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
